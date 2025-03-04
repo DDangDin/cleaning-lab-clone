@@ -7,14 +7,14 @@ import androidx.compose.ui.graphics.Color
 
 class CleaningLabRipple : RippleTheme {
     @Composable
-    override fun defaultColor(): Color = Color(0xFFFFFFFF)
+    override fun defaultColor(): Color = Color(0xFF000000)
 
     @Composable
     override fun rippleAlpha(): RippleAlpha = RippleAlpha(
-        focusedAlpha = 0.43f,
-        hoveredAlpha = 0.43f,
-        draggedAlpha = 0.43f,
-        pressedAlpha = 0.43f,
+        focusedAlpha = 0.235f,
+        hoveredAlpha = 0.235f,
+        draggedAlpha = 0.235f,
+        pressedAlpha = 0.235f,
     )
 }
 
