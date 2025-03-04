@@ -1,6 +1,5 @@
 ### ⚠️  PR check list ⚠️
 ```
-- PR 제목에 JIRA Ticket Number를 적어주세요.
 - commit message가 적절한지 확인해주세요. 
 - 마지막으로 Coding Convention을 준수했는지 확인해주세요.
 - 적절한 branch로 요청했는지 확인해주세요.
