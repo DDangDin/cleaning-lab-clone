@@ -13,6 +13,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.example.presentation.home.HomeScreen
 
 @Composable
 fun BottomNavigationGraph(
@@ -28,14 +29,7 @@ fun BottomNavigationGraph(
         startDestination = BottomNavigationItem.Home.route
     ) {
         composable(route = BottomNavigationItem.Home.route) {
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color.LightGray),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(text = "$currentRoute")
-            }
+            HomeScreen(Modifier.fillMaxSize())
         }
 
         composable(route = BottomNavigationItem.MyReservation.route) {

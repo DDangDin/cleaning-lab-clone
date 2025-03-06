@@ -9,4 +9,7 @@
     <string name="bottom_navigation_title_my_reservation">내 예약</string>
     <string name="bottom_navigation_title_plus_shop">플러스샵</string>
     <string name="bottom_navigation_title_more">더보기</string>
+
+<!-- Home Screen -->
+    <string name="home_screen_notice">알림</string>
 </resources>
