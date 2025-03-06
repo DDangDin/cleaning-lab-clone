@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":designsystem"))
 
     implementation(libs.androidx.core.ktx)
     testImplementation(libs.junit)
@@ -54,4 +55,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
 }
