@@ -4,6 +4,14 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import com.example.presentation.R
 
+/** BottomNavigation 라우트명  */
+private enum class BottomNavigationRoute {
+    Home,
+    MyReservation,
+    PlusShop,
+    More,
+}
+
 /**
  * [BottomNavigationBar] 에서 사용하는 항목 클래스
  *
