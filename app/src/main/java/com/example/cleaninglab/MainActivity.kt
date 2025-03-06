@@ -21,6 +21,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.designsystem.theme.theme.CleaningLabAppTheme
 import com.example.designsystem.theme.theme.CleaningLabTheme
 import com.example.presentation.bottomNavigation.BottomNavigationBar
+import com.example.presentation.bottomNavigation.BottomNavigationGraph
 import com.example.presentation.bottomNavigation.BottomNavigationItem
 
 class MainActivity : ComponentActivity() {
@@ -30,8 +31,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             val navController = rememberNavController()
-            val navBackStackEntry by navController.currentBackStackEntryAsState()
-            val currentRoute = navBackStackEntry?.destination?.route
 
             CleaningLabAppTheme {
                 Scaffold(
@@ -42,24 +41,10 @@ class MainActivity : ComponentActivity() {
                         )
                     }
                 ) {
-                    NavHost(
-                        modifier = Modifier,
-                        navController = navController,
-                        startDestination = BottomNavigationItem.Home.route
-                    ) {
-                        BottomNavigationItem.items.forEach { item ->
-                            composable(route = item.route) {
-                                Box(
-                                    modifier = Modifier
-                                        .fillMaxSize()
-                                        .background(CleaningLabTheme.colorScheme.componentFillBlue3),
-                                    contentAlignment = Alignment.Center
-                                ) {
-                                    Text(text = currentRoute ?: "null")
-                                }
-                            }
-                        }
-                    }
+                    BottomNavigationGraph(
+                        modifier = Modifier.fillMaxSize(),
+                        navController = navController
+                    )
                 }
             }
         }
