@@ -8,7 +8,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.LineHeightStyle
 import com.example.designsystem.R
 
-val pretendard = FontFamily(
+val Pretendard = FontFamily(
     Font(R.font.pretendard_regular, FontWeight.Normal, FontStyle.Normal),
     Font(R.font.pretendard_semibold, FontWeight.SemiBold, FontStyle.Normal),
     Font(R.font.pretendard_bold, FontWeight.Bold, FontStyle.Normal),
