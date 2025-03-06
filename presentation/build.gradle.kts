@@ -41,6 +41,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":designsystem"))
 
     implementation(libs.androidx.core.ktx)
     testImplementation(libs.junit)
