@@ -35,10 +35,10 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.designsystem.theme.theme.CleaningLabAppTheme
 import com.example.designsystem.theme.theme.CleaningLabTheme
+import com.example.designsystem.theme.util.dp
+import com.example.designsystem.theme.util.sp
 import com.example.presentation.R
 import com.example.presentation.util.clickableWithoutRipple
-import com.example.presentation.util.toScaledDp
-import com.example.presentation.util.toScaledSp
 
 @Composable
 fun BottomNavigationBar(
@@ -50,17 +50,6 @@ fun BottomNavigationBar(
     val density = LocalDensity.current.density
 
     Box {
-        Image(
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .fillMaxWidth()
-                .heightIn(min = 63.dp)
-                .zIndex(1f),
-            painter = painterResource(id = R.drawable.grid),
-            contentDescription = null,
-            contentScale = ContentScale.FillBounds,
-            alpha = 0.5f
-        )
         NavigationBar(
             modifier = modifier
                 .fillMaxWidth()
@@ -71,14 +60,7 @@ fun BottomNavigationBar(
             Content(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(
-                        PaddingValues(
-                            start = 32.toScaledDp(density),
-                            end = 32.5.toScaledDp(density),
-                            top = 14.toScaledDp(density),
-                            bottom = 6.toScaledDp(density)
-                        )
-                    ),
+                    .padding(contentPadding(density)),
                 navController = navController,
                 currentRoute = currentRoute
             )
@@ -92,8 +74,6 @@ private fun Content(
     navController: NavHostController,
     currentRoute: String?,
 ) {
-    val density = LocalDensity.current.density
-
     Row(
         modifier = modifier,
         horizontalArrangement = Arrangement.SpaceBetween,
@@ -101,7 +81,7 @@ private fun Content(
         BottomNavigationItem.items.forEach { item ->
             val icon = if (currentRoute == item.route) item.filledIcon else item.outlinedIcon
             Item(
-                modifier = Modifier.size(43.toScaledDp(density)),
+                modifier = Modifier.size(43.dp()),
                 icon = icon,
                 title = item.title,
                 onClick = {
@@ -119,27 +99,19 @@ private fun Item(
     @StringRes title: Int,
     onClick: () -> Unit,
 ) {
-    val density = LocalDensity.current.density
-
     Column(
         modifier = modifier.clickableWithoutRipple { onClick() },
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Icon(
-            modifier = Modifier.size(
-                width = 35.toScaledDp(density),
-                height = 25.toScaledDp(density)
-            ),
+            modifier = Modifier.size(35.dp(), 25.dp()),
             imageVector = ImageVector.vectorResource(id = icon),
             contentDescription = stringResource(id = title),
             tint = CleaningLabTheme.colorScheme.iconBlack2
         )
         Text(
             text = stringResource(id = title),
-            style = CleaningLabTheme.typography.label6.copy(
-                fontSize = 12.4.toScaledSp(density),
-                letterSpacing = 0.em
-            ),
+            style = CleaningLabTheme.typography.label6,
             color = CleaningLabTheme.colorScheme.iconBlack2
         )
     }
@@ -164,6 +136,15 @@ private fun onItemClickWithOptions(
         launchSingleTop = true
         restoreState = true
     }
+}
+
+private val contentPadding = { density: Float ->
+    PaddingValues(
+        start = 32.dp(density),
+        end = 32.5.dp(density),
+        top = 14.dp(density),
+        bottom = 6.dp(density)
+    )
 }
 
 @Preview(showBackground = true)
