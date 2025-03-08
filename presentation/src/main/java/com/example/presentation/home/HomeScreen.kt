@@ -106,7 +106,7 @@ private fun TopBar(
     ) {
         Icon(
             modifier = Modifier
-                .padding(end = 25.dp(), bottom = 11.dp())
+                .padding(bottom = 2.dp(), end = 18.dp())
                 .touchTargetIcon(
                     iconSize = 25,
                     ripple = false,
