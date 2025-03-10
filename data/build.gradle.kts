@@ -50,7 +50,6 @@ dependencies {
     implementation(libs.okhttp.logging.interceptor)
 
     // Hilt
-    // Hilt Dependency Injection
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
