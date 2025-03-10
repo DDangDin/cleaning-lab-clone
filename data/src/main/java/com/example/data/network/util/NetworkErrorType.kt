@@ -1,3 +1,5 @@
 package com.example.data.network.util
 
-enum class NetworkErrorType
+enum class NetworkErrorType {
+    MalformedJson
+}

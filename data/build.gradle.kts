@@ -59,4 +59,9 @@ dependencies {
 
     // Coroutine
     implementation(libs.kotlinx.coroutines.core)
+
+    // Testing
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.retrofit.mock)
+    testImplementation(libs.okhttp.mockWebServer)
 }
