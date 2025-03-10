@@ -23,3 +23,5 @@ rootProject.name = "CleaningLab"
 include(":app")
 include(":designsystem")
 include(":presentation")
+include(":data")
+include(":domain")
