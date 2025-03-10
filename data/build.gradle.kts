@@ -53,4 +53,7 @@ dependencies {
     // Hilt Dependency Injection
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+
+    // Coroutine
+    implementation(libs.kotlinx.coroutines.core)
 }
