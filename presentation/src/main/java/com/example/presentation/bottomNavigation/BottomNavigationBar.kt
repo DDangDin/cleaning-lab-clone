@@ -2,7 +2,6 @@ package com.example.presentation.bottomNavigation
 
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,24 +20,19 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.em
-import androidx.compose.ui.zIndex
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.designsystem.theme.theme.CleaningLabAppTheme
 import com.example.designsystem.theme.theme.CleaningLabTheme
 import com.example.designsystem.theme.util.dp
-import com.example.designsystem.theme.util.sp
 import com.example.presentation.R
-import com.example.presentation.util.clickableWithoutRipple
+import com.example.presentation.util.clickableNoRipple
 
 @Composable
 fun BottomNavigationBar(
@@ -100,7 +94,7 @@ private fun Item(
     onClick: () -> Unit,
 ) {
     Column(
-        modifier = modifier.clickableWithoutRipple { onClick() },
+        modifier = modifier.clickableNoRipple { onClick() },
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Icon(
